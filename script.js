@@ -8,32 +8,36 @@ var charChoices = ""
 
 function generatePassword() {
   charChoices = ""
-  var lengthChoice = prompt("Character length?")
+
+  var lengthChoice = prompt("Character length:")
   console.log(lengthChoice)
   if (lengthChoice < 8 || lengthChoice > 128) {
-    alert("Password must be at least 8 and no greater than 128 characters!")
+    alert("Password must be at least 8 and no greater than 128 characters.")
   return
   }
 
-  var lowerChoice = confirm("Do you want to include Lower Case?")
+  var lowerChoice = confirm("Include Lower Case Characters:")
   console.log(lowerChoice)
   if (lowerChoice === true) {
     charChoices = charChoices+lowerCase
     console.log(charChoices)
   }
-  var upperChoice = confirm("Do you want to include Upper Case?")
+
+  var upperChoice = confirm("Include Upper Case Characters:")
   console.log(upperChoice)
   if (upperChoice === true) {
     charChoices = charChoices+upperCase
     console.log(charChoices)
   }
-  var numberChoice = confirm("Do you want to include numbers?")
+
+  var numberChoice = confirm("Include Numbers:")
   console.log(numberChoice)
   if (numberChoice === true) {
     charChoices = charChoices+number
     console.log(charChoices)
   }
-  var symbolChoice = confirm("Do you want to include symbols?")
+
+  var symbolChoice = confirm("Include Symbols:")
   console.log(symbolChoice)
   if (symbolChoice === true) {
     charChoices = charChoices+symbol
@@ -41,7 +45,7 @@ function generatePassword() {
   }
 
   if (lowerChoice === false && upperChoice === false && numberChoice === false && symbolChoice === false) {
-    alert("You must choose at least one type!")
+    alert("You must choose at least one criteria.")
     return
   }
 
